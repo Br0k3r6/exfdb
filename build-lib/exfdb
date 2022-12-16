@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+import os
+if os.geteuid() != 0:
+        exit('Run it as root')
+os.system('sudo python3 /usr/share/exfdb/exfdb.py')
