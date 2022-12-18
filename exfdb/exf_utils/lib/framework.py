@@ -21,9 +21,23 @@ banner              | Display a random exfdb banner
 exit / quit         | Exit the framework
 -HELP-----------------------------------------"""
 
+global exploits
+global auxiliaries
+exploits = 1
+auxiliaries = 1
+exploits = str(exploits)
+auxiliaries = str(auxiliaries)
+
+global exploit_modules
+global auxiliaries_modules
+exploits_modules = """
+modules/exploits/http/php/php_8.1.0_dev_code_injection | PHP/8.1.0-dev Header code injection
+"""
+auxiliaries_modules = """
+modules/auxiliaries/http/php/vulnerability_checker     | PHP version vulnerability scanner
+"""
+
 def start():
-	exploits = str(open("modules/exploits.txt").read()).replace("\n", "")
-	auxiliaries = str(open("modules/auxiliaries.txt").read()).replace("\n", "")
 	try:
 		while True:
 			cmd_input = input(f"Exfdb (-)>")
@@ -44,7 +58,7 @@ def start():
 				except:
 					print("[-] Search command takes a argument to search!")
 				else:
-					file = str(open("modules/exploit_list.txt").read())
+					file = exploits_modules
 					file = file.split("\n")
 				found = 0
 				for search_query in file:
@@ -67,7 +81,7 @@ def start():
 				except:
 					print("[-] Search command takes a argument to search!")
 				else:
-					file = str(open("modules/auxiliary_list.txt").read())
+					file = auxiliaries_modules
 					file = file.split("\n")
 				found = 0
 				for search_query in file:
@@ -86,7 +100,7 @@ def start():
 			elif cmd == "num auxiliaries":
 				print("[i] (EXPLOITATION-FRAMEWORK-DATABASE) [ EXFDB ] [ AUXILIARIES: " + auxiliaries + " ]")
 			elif cmd == "show exploits":
-				exploits_read = str(open("modules/exploit_list.txt").read())
+				exploits_read = exploits_modules
 				exploit_list = exploits_read.split("\n")
 				print("-EXPLOITS----------------------------\n")
 				for exploit in exploit_list:
@@ -95,7 +109,7 @@ def start():
 					print("  "+exploit)
 				print("\n-EXPLOITS----------------------------")
 			elif cmd == "show all":
-				exploits_read = str(open("modules/exploit_list.txt").read())
+				exploits_read = exploits_modules
 				exploit_list = exploits_read.split("\n")
 				print("-EXPLOITS----------------------------\n")
 				for exploit in exploit_list:
@@ -104,7 +118,7 @@ def start():
 					print("  "+exploit)
 				print("\n-EXPLOITS----------------------------")
 				print()
-				auxiliaries_read = str(open("modules/auxiliary_list.txt").read())
+				auxiliaries_read = auxiliaries_modules
 				auxiliary_list = auxiliaries_read.split("\n")
 				print("-AUXILIARIES----------------------------\n")
 				for auxiliary in auxiliary_list:
@@ -113,7 +127,7 @@ def start():
 					print("  "+auxiliary)
 				print("\n-AUXILIARIES----------------------------")
 			elif cmd == "show auxiliaries":
-				auxiliaries_read = str(open("modules/auxiliary_list.txt").read())
+				auxiliaries_read = auxiliaries_modules
 				auxiliary_list = auxiliaries_read.split("\n")
 				print("-AUXILIARIES----------------------------\n")
 				for auxiliary in auxiliary_list:
