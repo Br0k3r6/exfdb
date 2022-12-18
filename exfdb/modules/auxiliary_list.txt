@@ -1,0 +1,1 @@
+modules/auxiliaries/http/php/vulnerability_checker     | PHP version vulnerability scanner
