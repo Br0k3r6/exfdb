@@ -1,0 +1,2 @@
+modules/exploits/http/php/php_8.1.0_dev_code_injection | PHP/8.1.0-dev Header code injection
+modules/auxiliaries/http/php/vulnerability_checker     | PHP version vulnerability scanner

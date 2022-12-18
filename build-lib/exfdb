@@ -3,4 +3,4 @@
 import os
 if os.geteuid() != 0:
         exit('Run it as root')
-os.system('sudo python3 /usr/share/exfdb/exfdb.py')
+os.system('cd /usr/share/exfdb && sudo python3 exfdb.py')

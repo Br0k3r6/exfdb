@@ -1,2 +1,2 @@
 This project is in build!
-Now it work but it isnt finished!
+It doesnt work now but later...

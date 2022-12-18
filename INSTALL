@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "[INFO] Make sure that you run it as root!"
+echo "[INFO] Make sure that you execute the installer in exfdb/ folder!"
+echo "[#] Waiting 10 seconds... Read the infos!"
+sleep 10
+
+sudo chmod 777 exfdb.py
+cp ../exfdb /usr/share/exfdb -r
+echo "[#] Writing bin code and creating a bin file..."
+cp build-lib/exfdb /usr/bin/exfdb
+chmod 777 /usr/bin/exfdb
+echo "[#] Installation successfully finished without errors!"

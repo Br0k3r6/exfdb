@@ -19,6 +19,8 @@ time.sleep(0.5)
 
 for x in range(26):
 	print("[+] Starting the exfdb(EXPLOITATION-FRAMEWORK-DATABASE) console... |       ", end="\r")
+	import os
+	import sys
 	time.sleep(0.1)
 	print("[+] Starting the exfdb(EXPLOITATION-FRAMEWORK-DATABASE) console... /       ", end="\r")
 	time.sleep(0.1)
@@ -31,8 +33,10 @@ for x in range(26):
 print("[+] The exfdb(EXPLOITATION-FRAMEWORK-DATABASE) console started without errors!")
 global exploits
 global auxiliaries
-exploits = str(open("modules/exploits.txt").read()).replace("\n", "")
-auxiliaries = str(open("modules/auxiliaries.txt").read()).replace("\n", "")
+exploits = 1
+auxiliaries = 1
+exploits = str(exploits)
+auxiliaries = str(auxiliaries)
 print("[i] (EXPLOITATION-FRAMEWORK-DATABASE) [ EXFDB ] [ EXPLOITS: " + exploits + " ]")
 print("[i] (EXPLOITATION-FRAMEWORK-DATABASE) [ EXFDB ] [ AUXILIARIES: " + auxiliaries + " ]")
 banner_result = banner.get_banner()

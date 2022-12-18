@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "[INFO] Uninstalling exfdb in 10 seconds...";
+sleep 10
+sudo rm -d -rf /usr/share/exfdb
+sudo rm /usr/bin/exfdb
+echo "[INFO] Program successfully uninstalled!";
+
